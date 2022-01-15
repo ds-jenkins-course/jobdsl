@@ -4,7 +4,7 @@ job('_RESENI/bootstrap') {
   scm {
     git {
       remote {
-        github("ds-jenkins-course/jobdsl.git")
+        github("ds-jenkins-course/jobdsl")
       }
     } 
   }
