@@ -1,9 +1,6 @@
 ---
 # echo https://raw.githubusercontent.com/ds-jenkins-course/jobdsl/$(git rev-parse HEAD)/jenkins.yaml | pbcopy
 
-jenkins:
-  systemMessage: "Nazdar"
-
 jobs:
   - script: >
       folder("_RESENI")
@@ -19,7 +16,7 @@ jobs:
         steps {
           dsl(
             [
-              'Jenkins-pro-Vyvojare/x00_bootstrap.groovy'
+              'Jenkins-pro-Vyvojare/dsl_00_bootstrap.groovy'
             ], 
             'DELETE'
             )

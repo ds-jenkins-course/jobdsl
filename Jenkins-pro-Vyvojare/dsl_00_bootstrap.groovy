@@ -9,8 +9,8 @@ job('_RESENI/go') {
   steps {
     dsl(
       [
-        'Jenkins-pro-Vyvojare/x01_lab_folders.groovy', 
-        'Jenkins-pro-Vyvojare/x02_lab03.groovy', 
+        'Jenkins-pro-Vyvojare/dsl_01_lab_folders.groovy', 
+        'Jenkins-pro-Vyvojare/dsl_02_lab03.groovy', 
       ], 
       'DELETE')
   }
