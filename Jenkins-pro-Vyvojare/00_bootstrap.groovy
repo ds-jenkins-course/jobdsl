@@ -1,8 +1,17 @@
 job('_RESENI/go') {
-    git("https://github.com/ds-jenkins-course/jobdsl.git")
-    steps {
-        dsl([
-            'Jenkins-pro-Vyvojare/01_lab_folders.groovy', 
-            ], 'DELETE')
-    }
+  scm {
+    git {
+      remote {
+        github("ds-jenkins-course/jobdsl")
+      }
+    } 
+  }
+  steps {
+    dsl(
+      [
+        'Jenkins-pro-Vyvojare/01_lab_folders.groovy', 
+        'Jenkins-pro-Vyvojare/02_lab03.groovy', 
+      ], 
+      'DELETE')
+  }
 }
