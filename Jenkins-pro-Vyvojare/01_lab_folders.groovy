@@ -1,4 +1,3 @@
-folder("_RESENI")
 folder("LAB02")
 folder("LAB03")
 folder("LAB04")
