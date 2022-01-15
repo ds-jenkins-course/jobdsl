@@ -2,13 +2,14 @@
 jenkins:
   systemMessage: "Nazdar"
 
-  script: |
-    folder("_RESENI")
-    job('_RESENI/bootstrap') {
-        git("https://github.com/ds-jenkins-course/jobdsl.git")
-        steps {
-            dsl([
-                'Jenkins-pro-Vyvojare/00_bootstrap.groovy'
-                ], 'DELETE')
-        }
-    }
+jobs:
+  - script: |
+      folder("_RESENI")
+      job('_RESENI/bootstrap') {
+          git("https://github.com/ds-jenkins-course/jobdsl.git")
+          steps {
+              dsl([
+                  'Jenkins-pro-Vyvojare/00_bootstrap.groovy'
+                  ], 'DELETE')
+          }
+      }
