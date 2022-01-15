@@ -1,8 +1,11 @@
 ---
+# echo https://raw.githubusercontent.com/ds-jenkins-course/jobdsl/$(git rev-parse HEAD)/jenkins.yaml | pbcopy
+
 jenkins:
   systemMessage: "Nazdar"
 
 jobs:
   - script: >
       folder("_RESENI")
+  - script: >
       folder("_RESENI2")
