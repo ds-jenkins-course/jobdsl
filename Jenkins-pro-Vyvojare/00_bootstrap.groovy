@@ -1,4 +1,4 @@
-job('_RESENI/bootstrap') {
+job('_RESENI/go') {
     git("https://github.com/ds-jenkins-course/jobdsl.git")
     steps {
         dsl([
