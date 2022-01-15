@@ -9,10 +9,19 @@ jobs:
       folder("_RESENI")
   - script: >
       job('_RESENI/bootstrap') {
-          git("https://github.com/ds-jenkins-course/jobdsl.git")
-          steps {
-              dsl([
-                  'Jenkins-pro-Vyvojare/00_bootstrap.groovy'
-                  ], 'DELETE')
-          }
+        scm {
+          git {
+            remote {
+              github("ds-jenkins-course/jobdsl")
+            }
+          } 
+        }
+        steps {
+          dsl(
+            [
+              'Jenkins-pro-Vyvojare/x00_bootstrap.groovy'
+            ], 
+            'DELETE'
+            )
+        }
       }
