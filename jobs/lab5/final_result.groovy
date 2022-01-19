@@ -70,7 +70,7 @@ job("_LABS/LAB5/TEAMS/MY_TEAM/02-HELLO-WEB/vsechny-branche") {
     scm {
         git {
             remote {
-                github("jenkins-for-developers/$REPO_JMENO-$REPO_PRIJMENI-java", "https")
+                github("jenkins-for-developers/$REPO_JMENO-$REPO_PRIJMENI-dropwizard", "https")
             }
             branch("**")
         }
