@@ -1,4 +1,4 @@
-job('_RESENI/go') {
+job('_LABS/create_lab_dsljobs') {
   scm {
     git {
       remote {
@@ -9,8 +9,7 @@ job('_RESENI/go') {
   steps {
     dsl(
       [
-        'Jenkins-pro-Vyvojare/dsl_01_lab_folders.groovy', 
-        'Jenkins-pro-Vyvojare/dsl_02_lab03.groovy', 
+        'jobs/lab3_job.groovy',
       ], 
       'DELETE')
   }

@@ -3,9 +3,9 @@
 
 jobs:
   - script: >
-      folder("_RESENI")
+      folder("_LABS")
   - script: >
-      job('_RESENI/bootstrap') {
+      job('_LABS/bootstrap') {
         scm {
           git {
             remote {
