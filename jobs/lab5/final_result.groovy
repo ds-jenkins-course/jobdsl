@@ -6,6 +6,7 @@ def desc ="LAB05 - Folders, Views, Credentials"
 folder("_LABS/LAB5")
 folder("_LABS/LAB5/TEAMS")
 folder("_LABS/LAB5/TEAMS/MY_TEAM") {
+    primaryView("Vsechno")
     views {
         buildMonitorView("TV") {
             recurse()
