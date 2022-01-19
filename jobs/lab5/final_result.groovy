@@ -19,11 +19,6 @@ folder("_LABS/LAB5/TEAMS/MY_TEAM") {
             jobs {
                 regex('.*')
             }
-            jobFilters {
-                unclassified {
-                    matchType(MatchType.INCLUDE_MATCHED)
-                }
-            }
         }
     }
 }
