@@ -43,7 +43,6 @@ job("$fldr_name/final") {
     publishers {
         archiveArtifacts {
             pattern('target/*.jar')
-            pattern('build/test-output/**/*.xml')
             fingerprint(true)
             onlyIfSuccessful()
         }
