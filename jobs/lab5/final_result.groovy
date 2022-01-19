@@ -3,7 +3,12 @@ def desc ="LAB05 - Folders, Views, Credentials"
 
 folder("_LABS/LAB5")
 folder("_LABS/LAB5/TEAMS")
-folder("_LABS/LAB5/TEAMS/MY_TEAM")
+folder("_LABS/LAB5/TEAMS/MY_TEAM") {
+    buildMonitorView("TV") {
+        recurse()
+        regex('.*')
+    }
+}
 folder("_LABS/LAB5/TEAMS/MY_TEAM/01-HELLO-CLI")
 folder("_LABS/LAB5/TEAMS/MY_TEAM/02-HELLO-WEB")
 
