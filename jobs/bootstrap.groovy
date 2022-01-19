@@ -1,4 +1,8 @@
 job('_LABS/create_lab_dsljobs') {
+  parameters {
+    stringParam('REPO_JMENO')
+    stringParam('REPO_PRIJMENI')
+  }
   scm {
     git {
       remote {
@@ -9,7 +13,7 @@ job('_LABS/create_lab_dsljobs') {
   steps {
     dsl(
       [
-        'jobs/lab3_job.groovy',
+        'jobs/lab3/final_result.groovy',
       ], 
       'DELETE')
   }
