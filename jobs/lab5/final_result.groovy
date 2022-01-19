@@ -6,7 +6,9 @@ folder("_LABS/LAB5/TEAMS")
 folder("_LABS/LAB5/TEAMS/MY_TEAM") {
     buildMonitorView("TV") {
         recurse()
-        regex('.*')
+        jobs {
+            regex('.*')
+        }
     }
 }
 folder("_LABS/LAB5/TEAMS/MY_TEAM/01-HELLO-CLI")
