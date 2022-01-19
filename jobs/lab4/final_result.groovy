@@ -7,8 +7,10 @@ folder(fldr_name)
 
 job("$fldr_name/final") {
     description("""Generated solution for LAB 03 - Freestyle build \"Hello Jenkins\" aplikace""")
-    keepDependencies(false)
+    concurrentBuild(true)
+
     jdk("OpenJDK 8")
+
     scm {
         git {
             remote {
@@ -17,13 +19,13 @@ job("$fldr_name/final") {
             branch("**")
         }
     }
+
     triggers {
         githubPush()
         scm("@daily") {
         }
     }
 
-    concurrentBuild(true)
     steps {
         maven {
             goals('clean package')
@@ -32,8 +34,9 @@ job("$fldr_name/final") {
         }
         shell("java -jar target/moje-apka-*.jar")
     }
+
     wrappers {
         timestamps()
-        ansiColorBuildWrapper()
+        colorizeOutput('vga')
     }
 }
