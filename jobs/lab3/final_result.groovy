@@ -1,7 +1,7 @@
 def name = "mira"
 def surname = "hedl"
 
-def fldr_name = "_LABS/LAB3/"
+def fldr_name = "_LABS/LAB3"
 
 folder(fldr_name)
 
