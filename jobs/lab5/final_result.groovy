@@ -38,7 +38,14 @@ job("_LABS/LAB5/TEAMS/MY_TEAM/01-HELLO-CLI/vsechny-branche") {
             mavenInstallation('Maven 3.3.9')
             properties(skipTests: true)
         }
-        shell("java -jar target/moje-apka-*.jar")
+        shell """\
+                set +x
+                echo "\\n\\n\\n"
+
+                java -jar target/moje-apka-*.jar
+
+                echo "\\n\\n\\n"
+                """.stripIndent()
     }
 
     publishers {
@@ -94,7 +101,7 @@ job("_LABS/LAB5/TEAMS/MY_TEAM/02-HELLO-WEB/vsechny-branche") {
 
                 java -jar target/demoapp.jar --version
 
-                echo "\\n\\n\\n
+                echo "\\n\\n\\n"
                 """.stripIndent()
     }
 
