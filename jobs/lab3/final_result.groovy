@@ -1,12 +1,13 @@
-//def name = "mira"
-//def surname = "hedl"
-//
+def desc = "LAB03 - Freestyle build Hello World aplikace a global tools"
 def fldr_name = "_LABS/LAB3"
+
 
 folder(fldr_name)
 
 job("$fldr_name/final") {
-    description("Generated solution for LAB3 - Building from GitHub")
+    description("""<hr/ ><i>Generated solution for: <b>${desc}</b</i>><hr/ >""")
+
+"Generated solution for LAB3 - Building from GitHub")
     keepDependencies(false)
     jdk("OpenJDK 8")
     scm {

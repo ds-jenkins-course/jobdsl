@@ -1,12 +1,12 @@
-//def name = "mira"
-//def surname = "hedl"
-//
+def desc = "LAB04 - Artifact a fingerprint"
 def fldr_name = "_LABS/LAB4"
+
 
 folder(fldr_name)
 
 job("$fldr_name/final") {
-    description("""Generated solution for LAB 03 - Freestyle build \"Hello Jenkins\" aplikace""")
+    description("""<hr/ ><i>Generated solution for: <b>${desc}</b</i>><hr/ >""")
+
     concurrentBuild(true)
 
     jdk("OpenJDK 8")

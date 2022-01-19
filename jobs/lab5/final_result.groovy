@@ -1,13 +1,14 @@
+def desc ="LAB05 - Folders, Views, Credentials"
+
+
 folder("_LABS/LAB5")
 folder("_LABS/LAB5/TEAMS")
 folder("_LABS/LAB5/TEAMS/MY_TEAM")
 folder("_LABS/LAB5/TEAMS/MY_TEAM/01-HELLO-CLI")
 folder("_LABS/LAB5/TEAMS/MY_TEAM/02-HELLO-WEB")
 
-
-def desc ="""Generated solution for LAB 05 - Folders, Views, Credentials"""
 job("_LABS/LAB5/TEAMS/MY_TEAM/01-HELLO-CLI/vsechny-branche") {
-    description(desc)
+    description("""<hr/ ><i>Generated solution for: <b>${desc}</b</i>><hr/ >""")
     concurrentBuild(true)
 
     jdk("OpenJDK 8")
@@ -64,7 +65,7 @@ job("_LABS/LAB5/TEAMS/MY_TEAM/01-HELLO-CLI/vsechny-branche") {
 
 
 job("_LABS/LAB5/TEAMS/MY_TEAM/02-HELLO-WEB/vsechny-branche") {
-    description(desc)
+    description("""<hr/ ><i>Generated solution for: <b>${desc}</b</i>><hr/ >""")
     concurrentBuild(true)
 
     jdk("OpenJDK 8")
