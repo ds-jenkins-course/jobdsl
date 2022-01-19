@@ -4,10 +4,24 @@ def desc ="LAB05 - Folders, Views, Credentials"
 folder("_LABS/LAB5")
 folder("_LABS/LAB5/TEAMS")
 folder("_LABS/LAB5/TEAMS/MY_TEAM") {
-    buildMonitorView("TV") {
-        recurse()
-        jobs {
-            regex('.*')
+    views {
+        buildMonitorView("TV") {
+            recurse()
+            jobs {
+                regex('.*')
+            }
+        }
+
+        listView("Vsechno") {
+            recurse()
+            jobs {
+                regex('.*')
+            }
+            jobFilters {
+                unclassified {
+                    matchType(MatchType.EXCLUDE_MATCHED)
+                }
+            }
         }
     }
 }
