@@ -8,6 +8,7 @@ folder(fldr_name)
 job("$fldr_name/final") {
     description("Generated solution for LAB3 - Building from GitHub")
     keepDependencies(false)
+    jdk("OpenJDK 8")
     scm {
         git {
             remote {
