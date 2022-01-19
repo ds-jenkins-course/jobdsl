@@ -5,9 +5,9 @@ def fldr_name = "_LABS/LAB3/"
 
 def createLab3(def name, def surname) {
 
-    folder(ldr_name)
+    folder(fldr_name)
 
-    job("$ldr_name/final") {
+    job("$fldr_name/final") {
         description("Generated solution for LAB3 - Building from GitHub")
         keepDependencies(false)
         scm {
