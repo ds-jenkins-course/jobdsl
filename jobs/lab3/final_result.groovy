@@ -1,9 +1,9 @@
 def name = "mira"
 def surname = "hedl"
 
+def fldr_name = "_LABS/LAB3/"
 
 def createLab3(def name, def surname) {
-    def fldr_name = "_LABS/LAB3/"
 
     folder(ldr_name)
 

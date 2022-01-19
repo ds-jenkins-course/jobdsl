@@ -7,6 +7,10 @@ job('example') {
         github("ds-jenkins-course/jobdsl")
     }
     steps {
-        groovyCommand(readFileFromWorkspace('jobs/lab3/final_result.groovy'))
+        dsl {
+            def a = readFileFromWorkspace('jobs/lab3/final_result.groovy')
+            def b = "\n\ncreateLab3('xxx', 'yyy')"
+            text(a + b)
+        }
     }
 }
