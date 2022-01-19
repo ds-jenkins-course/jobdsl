@@ -52,4 +52,8 @@ job("$fldr_name/final") {
         }
         fingerprint('**/pom.xml')
     }
+
+    logRotator {
+        artifactNumToKeep(3)
+    }
 }
