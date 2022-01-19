@@ -1,4 +1,6 @@
 ---
+# paste to: http://lab-instance:8000/configuration-as-code/
+
 # echo https://raw.githubusercontent.com/ds-jenkins-course/jobdsl/$(git rev-parse HEAD)/jenkins.yaml | pbcopy
 
 jobs:
@@ -16,7 +18,7 @@ jobs:
         steps {
           dsl(
             [
-              'Jenkins-pro-Vyvojare/dsl_00_bootstrap.groovy'
+              'jobs/bootstrap.groovy'
             ], 
             'DELETE'
             )
