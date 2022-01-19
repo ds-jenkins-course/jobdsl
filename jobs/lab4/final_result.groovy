@@ -41,9 +41,6 @@ job("$fldr_name/final") {
     }
 
     publishers {
-        publishBuild {
-            discardOldBuilds(-1, -1, -1, 3)
-        }
         archiveArtifacts {
             pattern('target/*.jar')
             pattern('build/test-output/**/*.xml')
