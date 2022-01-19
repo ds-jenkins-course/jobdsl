@@ -11,11 +11,7 @@ job('_LABS/create_lab3') {
     } 
   }
   steps {
-    dsl(
-      [
-        'jobs/lab3/final_result.groovy',
-      ], 
-      'DELETE')
+    dsl(['jobs/lab3/final_result.groovy'], 'DELETE')
   }
 }
 
@@ -32,11 +28,7 @@ job('_LABS/create_lab4') {
     }
   }
   steps {
-    dsl(
-            [
-                    'jobs/lab3/final_result.groovy',
-            ],
-            'DELETE')
+    dsl(['jobs/lab4/final_result.groovy'], 'DELETE')
   }
 }
 

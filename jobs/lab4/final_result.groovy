@@ -11,6 +11,11 @@ job("$fldr_name/final") {
 
     jdk("OpenJDK 8")
 
+    wrappers {
+        timestamps()
+        colorizeOutput()
+    }
+
     scm {
         git {
             remote {
@@ -35,8 +40,16 @@ job("$fldr_name/final") {
         shell("java -jar target/moje-apka-*.jar")
     }
 
-    wrappers {
-        timestamps()
-        colorizeOutput('vga')
+    publishers {
+        publishBuild {
+            discardOldBuilds(-1, -1, -1, 3)
+        }
+        archiveArtifacts {
+            pattern('target/*.jar')
+            pattern('build/test-output/**/*.xml')
+            fingerprint(true)
+            onlyIfSuccessful()
+        }
+        fingerprint('**/pom.xml')
     }
 }

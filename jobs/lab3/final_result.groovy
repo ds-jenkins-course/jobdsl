@@ -34,6 +34,6 @@ job("$fldr_name/final") {
     }
     wrappers {
         timestamps()
-        colorizeOutput('vga')
+        colorizeOutput()
     }
 }
