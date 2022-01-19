@@ -1,6 +1,6 @@
-def name = "mira"
-def surname = "hedl"
-
+//def name = "mira"
+//def surname = "hedl"
+//
 def fldr_name = "_LABS/LAB3"
 
 folder(fldr_name)
@@ -12,7 +12,7 @@ job("$fldr_name/final") {
     scm {
         git {
             remote {
-                github("jenkins-for-developers/$name-$surname-java", "https")
+                github("jenkins-for-developers/$REPO_JMENO-$REPO_PRIJMENI-java", "https")
             }
             branch("**")
         }
@@ -26,10 +26,9 @@ job("$fldr_name/final") {
     concurrentBuild(true)
     steps {
         maven {
-            goals('clean package -Dmaven.test.skip=True')
+            goals('clean package')
             mavenInstallation('Maven 3.3.9')
             properties(skipTests: true)
-            goals('clean')
         }
         shell("java -jar target/moje-apka-*.jar")
     }
