@@ -1,3 +1,5 @@
+import javaposse.jobdsl.dsl.views.jobfilter.MatchType
+
 def desc ="LAB05 - Folders, Views, Credentials"
 
 
@@ -19,7 +21,7 @@ folder("_LABS/LAB5/TEAMS/MY_TEAM") {
             }
             jobFilters {
                 unclassified {
-                    matchType(MatchType.EXCLUDE_MATCHED)
+                    matchType(MatchType.INCLUDE_MATCHED)
                 }
             }
         }
