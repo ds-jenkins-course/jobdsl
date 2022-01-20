@@ -18,16 +18,16 @@ folder("_LABS/LAB5/TEAMS/MY_TEAM") {
         listView("Vsechno") {
             recurse()
             jobs {
-                regex('([a-z0-9(),.=_+-]+)')
+                regex('.*')
             }
             columns {
-                status()
-                weather()
                 name()
+                buildButton()
                 lastSuccess()
                 lastFailure()
                 lastDuration()
-                buildButton()
+                weather()
+                status()
             }
         }
     }
