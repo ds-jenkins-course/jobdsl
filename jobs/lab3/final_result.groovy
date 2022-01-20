@@ -5,9 +5,10 @@ def fldr_name = "_LABS/LAB3"
 folder(fldr_name)
 
 job("$fldr_name/final") {
-    description("""<hr/ ><i>Generated solution for: <b>${desc}</b</i>><hr/ >"""
-
-"Generated solution for LAB3 - Building from GitHub")
+    description("""<hr/ ><i>Generated solution for: <b>${desc}</b</i>><hr/ >
+    
+    Generated solution for LAB3 - Building from GitHub
+    """)
     keepDependencies(false)
     jdk("OpenJDK 8")
     scm {
