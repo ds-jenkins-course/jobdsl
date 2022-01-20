@@ -24,3 +24,37 @@ jobs:
             )
         }
       }
+
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  jdk:
+    installations:
+    - name: "OpenJDK 8"
+      properties:
+      - installSource:
+          installers:
+          - adoptOpenJdkInstaller:
+              id: "jdk8u312-b07"
+    - name: "OpenJDK 11"
+      properties:
+      - installSource:
+          installers:
+          - adoptOpenJdkInstaller:
+              id: "jdk-11.0.13+8"
+  maven:
+    installations:
+    - name: "Maven 3.3.9"
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: "3.3.9"
+    - name: "Maven 3"
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: "3.8.4"
