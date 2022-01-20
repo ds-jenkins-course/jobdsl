@@ -50,3 +50,21 @@ job('_LABS/create_lab5') {
   }
 }
 
+
+job('_LABS/create_lab6') {
+  parameters {
+    stringParam('REPO_JMENO')
+    stringParam('REPO_PRIJMENI')
+  }
+  scm {
+    git {
+      remote {
+        github("ds-jenkins-course/jobdsl")
+      }
+    }
+  }
+  steps {
+    dsl(['jobs/lab6/final_result.groovy'], 'DELETE')
+  }
+}
+

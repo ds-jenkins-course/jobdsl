@@ -1,11 +1,11 @@
 import javaposse.jobdsl.dsl.views.jobfilter.MatchType
 
-def desc ="LAB05 - Folders, Views, Credentials"
+def desc ="LAB06 - Pousteni Testu"
 
 
-folder("_LABS/LAB5")
-folder("_LABS/LAB5/TEAMS")
-folder("_LABS/LAB5/TEAMS/MY_TEAM") {
+folder("_LABS/LAB6")
+folder("_LABS/LAB6/TEAMS")
+folder("_LABS/LAB6/TEAMS/MY_TEAM") {
     primaryView("Vsechno")
     views {
         buildMonitorView("TV") {
@@ -32,10 +32,10 @@ folder("_LABS/LAB5/TEAMS/MY_TEAM") {
         }
     }
 }
-folder("_LABS/LAB5/TEAMS/MY_TEAM/01-HELLO-CLI")
-folder("_LABS/LAB5/TEAMS/MY_TEAM/02-HELLO-WEB")
+folder("_LABS/LAB6/TEAMS/MY_TEAM/01-HELLO-CLI")
+folder("_LABS/LAB6/TEAMS/MY_TEAM/02-HELLO-WEB")
 
-job("_LABS/LAB5/TEAMS/MY_TEAM/01-HELLO-CLI/vsechny-branche") {
+job("_LABS/LAB6/TEAMS/MY_TEAM/01-HELLO-CLI/vsechny-branche") {
     description("""<hr/ ><i>Generated solution for: <b>${desc}</b</i>><hr/ >""")
     concurrentBuild(true)
 
@@ -84,6 +84,27 @@ job("_LABS/LAB5/TEAMS/MY_TEAM/01-HELLO-CLI/vsechny-branche") {
             onlyIfSuccessful()
         }
         fingerprint('**/pom.xml')
+
+        recordIssues {
+            tools {
+                mavenConsole()
+                java()
+                javaDoc()
+                checkStyle()
+            }
+        }
+
+        archiveJunit('target/*-reports/*.xml') {
+            allowEmptyResults()
+            retainLongStdout()
+            testDataPublishers {
+                publishTestStabilityData()
+            }
+        }
+
+        jacocoCodeCoverage {
+            sourcePattern('src/**')
+        }
     }
 
     logRotator {
@@ -92,7 +113,7 @@ job("_LABS/LAB5/TEAMS/MY_TEAM/01-HELLO-CLI/vsechny-branche") {
 }
 
 
-job("_LABS/LAB5/TEAMS/MY_TEAM/02-HELLO-WEB/vsechny-branche") {
+job("_LABS/LAB6/TEAMS/MY_TEAM/02-HELLO-WEB/vsechny-branche") {
     description("""<hr/ ><i>Generated solution for: <b>${desc}</b</i>><hr/ >""")
     concurrentBuild(true)
 
@@ -120,7 +141,8 @@ job("_LABS/LAB5/TEAMS/MY_TEAM/02-HELLO-WEB/vsechny-branche") {
 
     steps {
         maven {
-            goals('clean package')
+            goals('clean verify -Dmaven.test.failure.ignore=true')
+            goals('checkstyle:checkstyle')
             mavenInstallation('Maven 3.3.9')
             properties(skipTests: true)
         }
@@ -140,7 +162,29 @@ job("_LABS/LAB5/TEAMS/MY_TEAM/02-HELLO-WEB/vsechny-branche") {
             fingerprint(true)
             onlyIfSuccessful()
         }
+
         fingerprint('**/pom.xml')
+
+        recordIssues {
+            tools {
+                mavenConsole()
+                java()
+                javaDoc()
+                checkStyle()
+            }
+        }
+
+        archiveJunit('target/*-reports/*.xml') {
+            allowEmptyResults()
+            retainLongStdout()
+            testDataPublishers {
+                publishTestStabilityData()
+            }
+        }
+
+        jacocoCodeCoverage {
+            sourcePattern('src/**')
+        }
     }
 
     logRotator {
